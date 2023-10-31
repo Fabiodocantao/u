@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toca do Nerd</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: white; /* Plano de fundo branco */
+        }
+
+        header {
+            background-image: url('oh.png');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            width: 100%;
+                padding: 20px 0;
+        }
+
+        #conteudo {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 80%;
+            margin-top: 20px;
+        }
+
+        #postagens {
+            width: 60%;
+        }
+
+        #links {
+            width: 30%;
+            position: sticky;
+            top: 0;
+        }
+
+        #links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #links li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            width: 100%;
+            background: linear-gradient(to top, blue, white); /* Cores de estrelinhas do Super Mario */
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="logo"><br></h1>
+    </header>
+
+    <div id="conteudo">
+        <div id="postagens">
+            <div class="postagem" id="postagem1" style="display: none;">
+                <h2>Um</h2>
+                <p>Beijo da Tati.</p>
+            </div>
+            <div class="postagem" id="postagem2" style="display: none;">
+                <h2>No rosto embaixo da orelha rs!!!</h2>
+                <p>To merecendo?...</p>
+            </div>
+            <!-- Adicione mais postagens conforme necessário -->
+        </div>
+
+        <div id="links">
+            <ul>
+                <li><a href="#" onclick="mostrarPostagem('postagem1')">Qual seu desejo?</a></li>
+                <li><a href="#" onclick="mostrarPostagem('postagem2')">Por que essa pessoa?</a></li>
+                <!-- Adicione mais links para outras postagens conforme necessário -->
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p style="color: white;">Fábio do Cantão</p>
+    </footer>
+
+    <script>
+        function mostrarPostagem(idPostagem) {
+            var postagem = document.getElementById('postagens');
+            var todasPostagens = postagem.getElementsByClassName('postagem');
+            for (var i = 0; i < todasPostagens.length; i++) {
+                todasPostagens[i].style.display = 'none';
+            }
+            var postagemAtual = document.getElementById(idPostagem);
+            postagemAtual.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
